@@ -156,8 +156,8 @@ export function newContainer(e) {
     movieDivLocation.classList.add('movie__div');
 
     if (location.length === 0 && vehicle.length === 0) {
-        divOtherSub.innerHTML = `<p> Aquí no hay nada!!</p>
-        <div><img class="movie__img" src="https://static.vix.com/es/sites/default/files/s/studio_ghibli-5.gif" alt="No hay locaciones ni vehiculos!"></div>`
+        divOtherSub.innerHTML = `<p> Aquí no hay nada !</p>
+        <div><img class="movie__img" src="https://i.pinimg.com/originals/11/8b/cf/118bcfbcdf6a8ffd86b4691b6a622f85.gif" alt="No hay locaciones ni vehiculos!"></div>`
     } else {
         for (let i = 0; i < location.length; i++) {
             movieDivLocation.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">`;
