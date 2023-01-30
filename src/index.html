@@ -33,31 +33,32 @@
       <!--contador de peliculas-->
       <p id="countFilms" class="countFilms"></p>
       <div class="filters">
-        <select id="filters__initial" class="filters__initial">
-          <option value="0">A-Z</option>
-          <option value="1">Z-A </option>
-        </select>
         <select id="filters__director" class="filters__director">
           <option selected value="all">Director</option>
-          <option value="0">Hayao Miyazaki</option>
-          <option value="1">Goro Miyazaki</option>
-          <option value="2">Isao Takahata</option>
-          <option value="3">Hiroyuki Morita</option>
-          <option value="4">Hiromasa Yonebayashi</option>
-          <option value="5">Yoshifumi Kondo</option>
+          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+          <option value="Gorō Miyazaki">Goro Miyazaki</option>
+          <option value="Isao Takahata">Isao Takahata</option>
+          <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+          <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+          <option value="Yoshifumi Kondō">Yoshifumi Kondo</option>
         </select>
         <select id="filters__producer" class="filters__producer">
           <option selected value="all">Productor</option>
-          <option value="0">Isao Takahata</option>
-          <option value="1">Toshio Suzuki</option>
-          <option value="2">Toru Hara</option>
-          <option value="3">Hayao Miyazaki</option>
-          <option value="4">Yoshiaki Nishimura</option>
+          <option value="Isao Takahata">Isao Takahata</option>
+          <option value="Toshio Suzuki">Toshio Suzuki</option>
+          <option value="Toru Hara">Toru Hara</option>
+          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+          <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>
+        </select>
+        <select id="filters__initial" class="filters__initial">
+          <option value="0">A-Z</option>
+          <option value="1">Z-A </option>
         </select>
         <select id="filters__year" class="filters__year">
           <option value="0">Año Asc</option>
           <option value="1">Año Desc</option>
         </select>
+        <button type="button" id="clean">Limpiar filtros</button>
         <a href="#theBestMovies">The Best</a>
       </div>
     </div>

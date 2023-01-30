@@ -126,7 +126,7 @@ p {
     justify-content: flex-end;
     gap: 0px 10px;
 }
-.filters a{
+.filters a, button{
     text-decoration: none;
     text-align: center;
     width: 75px;
@@ -136,8 +136,18 @@ p {
     background-color: var(--blue--color);
     color: var(--white-color);
 }
+.filters button{
+    border: 1px solid var(--blue--color);
+    background-color: var(--white-color);
+    color: black;
+    width: 110px;
+}
 .filters a:hover{
     background-color: var(--bluedark--color);
+}
+.filters button:hover{
+    background-color: var(--blue--color);
+    color: var(--white-color);
 }
 .filters select {
     width: 95px;
