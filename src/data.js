@@ -8,17 +8,28 @@ Si "a" debe ir ordenado después que "b", entonces devolvemos un número mayor q
 
 */
 
-export const filterAZ = (data) => {
-  const sortLettersAZ = data.sort((a, b) => {
-    return a.title.localeCompare(b.title);
+// export const filterAZ = (data) => {
+//   const sortLettersAZ = data.sort((a, b) => {
+//     return a.title.localeCompare(b.title);
+//   });
+//   return sortLettersAZ;
+// }
+// export const filterZA = (data) => {
+//   const sortLetterZA = data.sort((a, b) => {
+//     return b.title.localeCompare(a.title);
+//   });
+//   return sortLetterZA;
+// }
+
+export const sortAlphabetic = (data, key) => {
+  const sortLetters = data.sort((a, b) => {
+    if (key === 0) {
+      return a.title.localeCompare(b.title);
+    } else {
+      return b.title.localeCompare(a.title);
+    }
   });
-  return sortLettersAZ;
-}
-export const filterZA = (data) => {
-  const sortLetterZA = data.sort((a, b) => {
-    return b.title.localeCompare(a.title);
-  });
-  return sortLetterZA;
+  return sortLetters;
 }
 
 //filtro por director
@@ -33,20 +44,31 @@ export const filterDataProducer = (data, nameProducer) => {
   return newDataProducer;
 }
 
-//Ordenar por año Asc
-export const filterDataYearAsc = (data) => {
-  const filterDataYear = data.sort((a, b) => {
-    return a.release_date - b.release_date;
-  });
-  return filterDataYear;
-}
+// //Ordenar por año Asc
+// export const filterDataYearAsc = (data) => {
+//   const filterDataYear = data.sort((a, b) => {
+//     return a.release_date - b.release_date;
+//   });
+//   return filterDataYear;
+// }
 
-// Ordenar por año Desc
-export const filterDataYearDesc = (data) => {
-  const filterDataYearDes = data.sort((a, b) => {
-    return b.release_date - a.release_date;
+// // Ordenar por año Desc
+// export const filterDataYearDesc = (data) => {
+//   const filterDataYearDes = data.sort((a, b) => {
+//     return b.release_date - a.release_date;
+//   });
+//   return filterDataYearDes;
+// }
+
+export const sortDataYear = (data, key) => {
+  const dataYear = data.sort((a, b) => {
+    if (key === 0) {
+      return a.release_date - b.release_date;
+    } else {
+      return b.release_date - a.release_date;
+    }
   });
-  return filterDataYearDes;
+  return dataYear;
 }
 
 // Filter los con mejores puntaje

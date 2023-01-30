@@ -1,4 +1,4 @@
-import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer, compute } from './data.js';
+import { /*filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc,*/ filterDataDirector, filterDataProducer, compute, sortAlphabetic, sortDataYear } from './data.js';
 import { newContainer } from './template.js';
 
 const containerAnimationes = document.getElementById('animations');
@@ -43,6 +43,7 @@ fetch("./data/ghibli/ghibli.json")
 
                 // Tiene que ir adentro para que funcione al dar click en todas las tarjetas, incluso a las que se toman con filtro. 
                 cardAnimations.addEventListener("click", () => {
+                    console.log("cliiiiick")
                     newContainer(arr);
                 });
 
@@ -52,15 +53,19 @@ fetch("./data/ghibli/ghibli.json")
 
         // Filtrar de la A a la Z y de la Z a la A
         filterLetterOrder.addEventListener('change', () => {
-            if (filterLetterOrder.value === "0") {
-                const filterLetterAZ = filterAZ(dataStudioGhibli);
-                displayCardGhibli(filterLetterAZ);
-            }
-            if (filterLetterOrder.value === "1") {
-                const filterLetterZA = filterZA(dataStudioGhibli);
-                displayCardGhibli(filterLetterZA);
+            switch (filterLetterOrder.value) {
+                case '0':
+                    const filterLetterAZ = sortAlphabetic(dataStudioGhibli, 0);
+                    displayCardGhibli(filterLetterAZ);
+                    break;
+            
+                case '1':
+                    const filterLetterZA = sortAlphabetic(dataStudioGhibli, 1);
+                    displayCardGhibli(filterLetterZA);
+                    break;
             }
         })
+
 
         //filtrar por director
         filterXDirector.addEventListener('change', () => {
@@ -115,13 +120,15 @@ fetch("./data/ghibli/ghibli.json")
 
         // Ordenar los años de menor a mayor y viceversa
         filterYear.addEventListener('change', () => {
-            if (filterYear.value === '0') {
-                const filterXYear = filterDataYearAsc(dataStudioGhibli)
-                displayCardGhibli(filterXYear)
-            }
-            if (filterYear.value === '1') {
-                const filterXYear = filterDataYearDesc(dataStudioGhibli)
-                displayCardGhibli(filterXYear)
+            switch (filterYear.value) {
+                case '0':
+                    const yearAsc = sortDataYear(dataStudioGhibli, 0)
+                    displayCardGhibli(yearAsc)                    
+                    break;
+                case '1':
+                    const yearDesc = sortDataYear(dataStudioGhibli, 1)
+                    displayCardGhibli(yearDesc)
+                    break;
             }
         })
 
